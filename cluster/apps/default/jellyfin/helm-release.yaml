@@ -87,9 +87,6 @@ spec:
         type: hostPath
         path: /mnt/data/jellyfin-config
         mountPath: /config
-      transcode:
-        enabled: true
-        type: emptyDir
     resources:
       requests:
         cpu: "2"
