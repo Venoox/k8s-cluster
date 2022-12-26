@@ -9,3 +9,4 @@ resources:
   - reloader
   - jellyfin
   - sonarr
+  - radarr
