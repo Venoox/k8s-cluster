@@ -144,7 +144,7 @@ spec:
         accessMode: ReadWriteOnce
     resources:
       requests:
-        cpu: "2"
+        cpu: "1"
         memory: 512Mi
       limits:
         memory: 2048Mi
