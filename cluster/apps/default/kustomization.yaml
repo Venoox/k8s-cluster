@@ -7,3 +7,4 @@ resources:
   - hajimari
   - reloader
   - jellyfin
+  - sonarr
