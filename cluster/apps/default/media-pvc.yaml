@@ -42,5 +42,5 @@ spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 500Gi
+      storage: 300Gi
   storageClassName: local-ssd
