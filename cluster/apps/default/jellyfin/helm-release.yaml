@@ -137,13 +137,6 @@ spec:
         size: 200Gi
         accessMode: ReadWriteMany
         storageClass: local-ssd
-      config:
-        enabled: true
-        type: pvc
-        mountPath: /config
-        size: 1Gi
-        accessMode: ReadWriteOnce
-        storageClass: local-ssd
     resources:
       requests:
         cpu: "1"
