@@ -134,7 +134,7 @@ spec:
         enabled: true
         type: pvc
         mountPath: /media
-        size: 200Gi
+        size: 300Gi
         accessMode: ReadWriteMany
         storageClass: local-ssd
     resources:
