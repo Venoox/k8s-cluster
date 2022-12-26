@@ -10,3 +10,4 @@ resources:
   - jellyfin
   - sonarr
   - radarr
+  - bazarr
