@@ -42,18 +42,16 @@ spec:
           http:
             port: *port
       bittorrent:
+        enabled: true
+        type: LoadBalancer
+        externalIPs: ["192.168.30.202"]
         ports:
           bittorrent:
             enabled: true
-            type: LoadBalancer
-            externalIPs: ["192.168.30.202"]
-            ports:
-              bittorrent:
-                enabled: true
-                port: *port-bt
-                protocol: TCP
-                targetPort: *port-bt
-            externalTrafficPolicy: Local
+            port: *port-bt
+            protocol: TCP
+            targetPort: *port-bt
+        externalTrafficPolicy: Local
     ingress:
       main:
         enabled: true
