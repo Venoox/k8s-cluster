@@ -38,11 +38,13 @@ spec:
       QBITTORRENT__BT_PORT: &port-bt 50413
     service:
       main:
+        primary: true
         ports:
           http:
             port: *port
       bittorrent:
         enabled: true
+        primary: false
         type: LoadBalancer
         externalIPs: ["192.168.30.202"]
         ports:
