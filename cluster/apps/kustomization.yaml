@@ -6,4 +6,5 @@ resources:
   - flux-system
   - kube-system
   - networking
+  - gpu-operator
   # - system-upgrade
