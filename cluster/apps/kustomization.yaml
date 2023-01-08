@@ -7,4 +7,5 @@ resources:
   - kube-system
   - networking
   - gpu-operator
+  - longhorn-system
   # - system-upgrade
