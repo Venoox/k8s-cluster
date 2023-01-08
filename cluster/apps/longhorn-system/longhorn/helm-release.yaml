@@ -30,7 +30,7 @@ spec:
     ingress:
       enabled: true
       ingressClassName: nginx
-      host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
+      host: "longhorn.${SECRET_DOMAIN}"
       tls: true
       secureBackends: true
       tlsSecret: "longhorn-tls"
