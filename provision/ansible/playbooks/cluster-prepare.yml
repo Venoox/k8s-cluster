@@ -82,6 +82,12 @@
               net.bridge.bridge-nf-call-ip6tables: 1
               fs.inotify.max_user_watches: 524288
               fs.inotify.max_user_instances: 512
+        - name: System Configuration (2) | Blacklist the nouveau driver module
+          community.general.kernel_blacklist:
+            name: nouveau
+            state: present
+        - name: System Configuration (2) | Make blacklist persistent
+          ansible.builtin.shell: update-initramfs -u
       notify: Reboot
 
   handlers:
