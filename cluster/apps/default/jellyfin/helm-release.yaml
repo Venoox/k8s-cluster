@@ -95,7 +95,7 @@ spec:
         existingClaim: jellyfin-media
     resources:
       requests:
-        cpu: "1"
+        cpu: 10m
         memory: 512Mi
       limits:
         memory: 2048Mi
