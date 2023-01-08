@@ -82,6 +82,31 @@
               net.bridge.bridge-nf-call-ip6tables: 1
               fs.inotify.max_user_watches: 524288
               fs.inotify.max_user_instances: 512
+        - name: System Configuration (2) | Disable swap at runtime
+          ansible.builtin.command: swapoff -a
+          when:
+            - ansible_swaptotal_mb > 0
+        - name: System Configuration (2) | Disable swap at boot
+          ansible.posix.mount:
+            name: "{{ item }}"
+            fstype: swap
+            state: absent
+          loop: ["none", "swap"]
+        - name: System Configuration (2) | Disable mitigations
+          ansible.builtin.replace:
+            path: /etc/default/grub
+            regexp: '^(GRUB_CMDLINE_LINUX=(?:(?![" ]{{ item.key | regex_escape }}=).)*)(?:[" ]{{ item.key | regex_escape }}=\S+)?(.*")$'
+            replace: '\1 {{ item.key }}={{ item.value }}\2'
+          with_dict: "{{ grub_config }}"
+          vars:
+            grub_config:
+              mitigations: "off"
+          register: grub_status
+        - name: System Configuration (2) | Reconfigure grub and initramfs
+          ansible.builtin.command: "{{ item }}"
+          loop:
+            - update-grub
+          when: grub_status.changed
         - name: System Configuration (2) | Blacklist the nouveau driver module
           community.general.kernel_blacklist:
             name: nouveau

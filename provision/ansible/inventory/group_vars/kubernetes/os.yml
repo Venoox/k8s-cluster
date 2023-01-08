@@ -17,7 +17,6 @@ packages:
   - socat
   - open-iscsi
   - curl
-  - findmnt
   - grep
   # TODO(ansible): Might be required for newer Intel CPU generations
   # https://ask.fedoraproject.org/t/intel-graphics-best-practices-and-settings-for-hardware-acceleration/21119
