@@ -27,7 +27,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/onedr0p/sonarr-develop
-      tag: 4.0.0.314@sha256:aa0ec57a1504138c32999a32c381b742fb3c8e87785d6e07dd33d850859de375
+      tag: 4.0.0.344@sha256:4526203586c606530ec90e24b845c02b031b1b9807e91347c30ea28483f7458a
     env:
       TZ: Europe/Ljubljana
       SONARR__INSTANCE_NAME: Sonarr
