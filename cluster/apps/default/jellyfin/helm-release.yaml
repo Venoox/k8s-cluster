@@ -93,9 +93,17 @@ spec:
         type: pvc
         mountPath: /media
         existingClaim: jellyfin-media
+      transcode:
+        enabled: true
+        type: emptyDir
+        mountPath: /transcode
+    nodeSelector:
+      nvidia.com/gpu.present: "true"
     resources:
       requests:
         cpu: 10m
         memory: 512Mi
+        nvidia.com/gpu: 1
       limits:
         memory: 2048Mi
+        nvidia.com/gpu: 1
