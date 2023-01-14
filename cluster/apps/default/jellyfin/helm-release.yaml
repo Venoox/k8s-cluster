@@ -29,6 +29,7 @@ spec:
       tag: 10.8.8@sha256:1c00ffb5fcd791dfad8d0f98fdf8873dc0ffdff3ca541f902bd4d224a4688d95
     env:
       TZ: Europe/Ljubljana
+    runtimeClassName: nvidia
     service:
       main:
         ports:
@@ -103,7 +104,5 @@ spec:
       requests:
         cpu: 10m
         memory: 512Mi
-        nvidia.com/gpu: 1
       limits:
         memory: 2048Mi
-        nvidia.com/gpu: 1
