@@ -26,7 +26,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/onedr0p/jellyfin
-      tag: 10.8.8@sha256:1c00ffb5fcd791dfad8d0f98fdf8873dc0ffdff3ca541f902bd4d224a4688d95
+      tag: 10.8.9@sha256:01a6497a1290b73f63251aebe6d01327c15b3413c3e1013c2a396ffe116ced4d
     env:
       TZ: Europe/Ljubljana
       NVIDIA_VISIBLE_DEVICES: all
