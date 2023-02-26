@@ -27,6 +27,9 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    defaultSettings:
+      backupTarget: "s3://venoox-k8s-longhorn@eu-central-1/"
+      backupTargetCredentialSecret: "s3-credentials"
     ingress:
       enabled: true
       ingressClassName: nginx
